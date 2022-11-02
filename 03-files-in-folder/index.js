@@ -9,16 +9,15 @@ const path = require('path');
 
       if (item.isDirectory()) {
         console.log(`
-        folder 
-        ${file},
-        file extension ${path.extname(file)},
-        file size ${item.size} byte`);
+        type :folder 
+        file name: ${file},
+        file size: ${item.size} byte`);
       } else {
         console.log(`
-        file
-        ${file},
-        file extension ${path.extname(file)},
-        file size ${item.size} byte`);
+        type: file
+        file name: ${file},
+        file extension: ${path.extname(file)},
+        file size: ${item.size} byte`);
       }
     }
   } catch (err) {
