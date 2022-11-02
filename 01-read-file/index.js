@@ -1,7 +1,6 @@
-const fs = require('fs');
-const item = '01-read-file/text.txt';
-fs.readFile(item, (err, data) => {
-  if (err) throw err;
+const { createReadStream } = require('node:fs');
+let readableStream = createReadStream('01-read-file/text.txt');
 
-  console.log(data.toString());
+readableStream.on('data', function (chunk) {
+  console.log(chunk.toString());
 });
