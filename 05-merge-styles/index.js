@@ -4,8 +4,9 @@ const fs = require('fs');
 const path = require('path');
 
 const styleFolder = './05-merge-styles/styles';
+const projectDist = './05-merge-styles/project-dist';
 
-const writeToFile = createWriteStream('./05-merge-styles/project-dist/bundle.css');
+const writeToFile = createWriteStream(projectDist + '/bundle.css');
 
 (async () => {
   try {

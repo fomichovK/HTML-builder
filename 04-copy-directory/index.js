@@ -12,9 +12,8 @@ const newDir = fs.mkdir(dirCopy, (err) => {
   const files = await readdir(dirCopy);
   for (const file of files) {
     await fs.unlink(`${dirCopy}/${file}`, (err) => {
-      if (err) throw err; // не удалось удалить файл
-      console.log(file, ' Файл успешно удалён');
-    });
+      if (err) throw err; 
+        });
   }
 })();
 
