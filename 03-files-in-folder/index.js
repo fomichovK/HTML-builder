@@ -7,17 +7,15 @@ const path = require('path');
     for (const file of files) {
       let item = fs.statSync('./03-files-in-folder/secret-folder/' + file);
 
-      if (item.isDirectory()) {
+      if (!item.isDirectory()) {
         console.log(`
-        type :folder 
-        file name: ${file},
-        file size: ${item.size} byte`);
-      } else {
-        console.log(`
-        type: file
         file name: ${file},
         file extension: ${path.extname(file)},
         file size: ${item.size} byte`);
+      } else {
+        // console.log(`
+        // type: folder
+        // folder name: ${file},`);
       }
     }
   } catch (err) {
